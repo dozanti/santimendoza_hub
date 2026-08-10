@@ -1,4 +1,4 @@
-import { ArrowDown, Download } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { profile } from "../data/profile";
 import "./Hero.css";
 
@@ -21,10 +21,6 @@ export default function Hero() {
           <a href="#projects" className="btn btn--primary">
             View projects
             <ArrowDown size={15} strokeWidth={2} />
-          </a>
-          <a href={profile.cvUrl} download className="btn btn--ghost">
-            Download CV
-            <Download size={15} strokeWidth={2} />
           </a>
         </div>
       </div>
