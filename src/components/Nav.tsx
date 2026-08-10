@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { useState } from "react";
+import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import { social } from "../data/profile";
 import "./Nav.css";
 
@@ -9,6 +10,8 @@ const sections = [
 ];
 
 export default function Nav() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="nav">
       <div className="nav__inner wrap">
@@ -17,9 +20,13 @@ export default function Nav() {
           <span>santiago mendoza</span>
         </a>
 
-        <nav className="nav__links" aria-label="Sections">
+        <nav
+          id="nav-links"
+          className={open ? "nav__links nav__links--open" : "nav__links"}
+          aria-label="Sections"
+        >
           {sections.map((s) => (
-            <a key={s.href} href={s.href}>
+            <a key={s.href} href={s.href} onClick={() => setOpen(false)}>
               {s.label}
             </a>
           ))}
@@ -27,15 +34,30 @@ export default function Nav() {
 
         <div className="nav__social">
           <a href={social.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <Github size={17} strokeWidth={1.75} />
+            <Github size={17} strokeWidth={1.75} aria-hidden="true" />
           </a>
           <a href={social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <Linkedin size={17} strokeWidth={1.75} />
+            <Linkedin size={17} strokeWidth={1.75} aria-hidden="true" />
           </a>
           <a href={`mailto:${social.email}`} aria-label="Email">
-            <Mail size={17} strokeWidth={1.75} />
+            <Mail size={17} strokeWidth={1.75} aria-hidden="true" />
           </a>
         </div>
+
+        <button
+          type="button"
+          className="nav__toggle"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
+          aria-controls="nav-links"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? (
+            <X size={20} strokeWidth={1.75} aria-hidden="true" />
+          ) : (
+            <Menu size={20} strokeWidth={1.75} aria-hidden="true" />
+          )}
+        </button>
       </div>
     </header>
   );

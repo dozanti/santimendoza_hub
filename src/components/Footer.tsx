@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="wrap footer__inner">
         <span>&copy; {new Date().getFullYear()} {profile.name}</span>
         <a href={social.github} target="_blank" rel="noopener noreferrer">
-          github.com/santi-mz
+          {social.github.replace(/^https?:\/\//, "")}
         </a>
       </div>
     </footer>

@@ -61,8 +61,41 @@
   color: var(--accent);
 }
 
+.nav__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
 @media (max-width: 640px) {
   .nav__links {
     display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(11, 14, 18, 0.97);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem var(--gutter) 1rem;
+  }
+
+  .nav__links a {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav__links--open {
+    display: flex;
+  }
+
+  .nav__toggle {
+    display: flex;
   }
 }

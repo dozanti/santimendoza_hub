@@ -18,7 +18,7 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="project">
       <div className="project__head">
-        <Icon size={18} strokeWidth={1.75} className="project__icon" />
+        <Icon size={18} strokeWidth={1.75} className="project__icon" aria-hidden="true" />
         <span className="project__category">{project.category}</span>
       </div>
 
@@ -33,12 +33,12 @@ function ProjectCard({ project }: { project: Project }) {
 
       <div className="project__links">
         <a href={project.repo} target="_blank" rel="noopener noreferrer">
-          <Github size={14} strokeWidth={1.75} />
+          <Github size={14} strokeWidth={1.75} aria-hidden="true" />
           Code
         </a>
         {project.live && (
           <a href={project.live} target="_blank" rel="noopener noreferrer">
-            <ExternalLink size={14} strokeWidth={1.75} />
+            <ExternalLink size={14} strokeWidth={1.75} aria-hidden="true" />
             {project.liveLabel ?? "View"}
           </a>
         )}
@@ -51,7 +51,7 @@ export default function Projects() {
   return (
     <section id="projects" className="projects">
       <div className="wrap">
-        <p className="eyebrow">SM / 02 &mdash; Projects</p>
+        <h2 className="eyebrow">SM / 02 &mdash; Projects</h2>
 
         <div className="projects__grid">
           {projects.map((p) => (
