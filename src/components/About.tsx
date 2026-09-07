@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section id="about" className="about">
       <div className="wrap">
-        <h2 className="eyebrow">SM / 01 &mdash; About</h2>
+        <h2 className="eyebrow">{profile.monogram} / 01 &mdash; About</h2>
 
         <div className="about__grid">
           <p className="about__bio">{profile.bio}</p>

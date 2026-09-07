@@ -5,7 +5,10 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="wrap footer__inner">
-        <span>&copy; {new Date().getFullYear()} {profile.name}</span>
+        <span>
+          &copy; {new Date().getFullYear()} <span translate="no">{profile.brand}</span> &mdash;{" "}
+          <span translate="no">{profile.name}</span>
+        </span>
         <a href={social.github} target="_blank" rel="noopener noreferrer">
           {social.github.replace(/^https?:\/\//, "")}
         </a>

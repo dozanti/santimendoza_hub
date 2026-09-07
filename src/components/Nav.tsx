@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
-import { social } from "../data/profile";
+import { profile, social } from "../data/profile";
 import "./Nav.css";
 
 const sections = [
@@ -15,9 +15,9 @@ export default function Nav() {
   return (
     <header className="nav">
       <div className="nav__inner wrap">
-        <a href="#top" className="nav__mark" aria-label="Santiago Mendoza, back to top">
+        <a href="#top" className="nav__mark" aria-label={`${profile.brand}, back to top`}>
           <img src="/mark.svg" alt="" width={28} height={28} />
-          <span>santiago mendoza</span>
+          <span translate="no">{profile.brand}</span>
         </a>
 
         <nav

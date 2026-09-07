@@ -12,6 +12,8 @@ export interface Project {
 }
 
 export const profile = {
+  brand: "Dozanti",
+  monogram: "DZ",
   name: "Santiago Mendoza",
   role: "Backend Engineer",
   tagline: "APIs, systems, and small tools that solve a real problem for someone.",
@@ -21,10 +23,10 @@ export const profile = {
 };
 
 export const social = {
-  github: "https://github.com/santi-mz",
-  linkedin: "https://linkedin.com/in/david-santiago-mendoza-yasno",
-  email: "santiagoyasno@gmail.com",
-  emailAlt: "santiagoyasno@santimendoza.com",
+  github: "https://github.com/dozanti",
+  linkedin: "https://www.linkedin.com/in/dozanti/",
+  email: "santimendoza@dozanti.com",
+  emailAlt: "santiagoyasno@gmail.com",
 };
 
 export const projects: Project[] = [
@@ -34,8 +36,8 @@ export const projects: Project[] = [
     description: "Android app that walks high schoolers through common math operations, step by step.",
     tech: ["Unity", "C#", "Android"],
     category: "mobile",
-    repo: "https://github.com/santi-mz/matema",
-    live: "https://github.com/santi-mz/MateMa/releases",
+    repo: "https://github.com/dozanti/matema",
+    live: "https://github.com/dozanti/MateMa/releases",
     liveLabel: "Releases",
   },
   {
@@ -44,7 +46,7 @@ export const projects: Project[] = [
     description: "Desktop app for solving matrix operations and systems of equations.",
     tech: ["C#", "Desktop"],
     category: "desktop",
-    repo: "https://github.com/santi-mz/matrixma",
+    repo: "https://github.com/dozanti/matrixma",
   },
   {
     id: "apologuest",
@@ -52,7 +54,7 @@ export const projects: Project[] = [
     description: "Console number-guessing game with a handful of extra rules to keep it interesting.",
     tech: ["C#", "Console"],
     category: "game",
-    repo: "https://github.com/santi-mz/apolo-guesser",
+    repo: "https://github.com/dozanti/apolo-guesser",
   },
   {
     id: "muxicmatchapi",
@@ -60,7 +62,7 @@ export const projects: Project[] = [
     description: "C# library wrapping the Musixmatch API for track info and lyrics.",
     tech: ["C#", "Library"],
     category: "library",
-    repo: "https://github.com/santi-mz/MuxicMatchApi",
+    repo: "https://github.com/dozanti/MuxicMatchApi",
     live: "https://www.nuget.org/packages/MuxicMatchApi",
     liveLabel: "NuGet",
   },
@@ -70,7 +72,7 @@ export const projects: Project[] = [
     description: "C# library for fetching song lyrics from a single call.",
     tech: ["C#", "Library"],
     category: "library",
-    repo: "https://github.com/santi-mz/musiclyrics",
+    repo: "https://github.com/dozanti/musiclyrics",
     live: "https://www.nuget.org/packages/musiclyrics",
     liveLabel: "NuGet",
   },
@@ -80,6 +82,6 @@ export const projects: Project[] = [
     description: "Where snippets, half-finished ideas, and test code go to live.",
     tech: ["Various"],
     category: "misc",
-    repo: "https://github.com/santi-mz/junkcode",
+    repo: "https://github.com/dozanti/junkcode",
   },
 ];

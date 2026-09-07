@@ -1,12 +1,12 @@
 import { Linkedin, Mail } from "lucide-react";
-import { social } from "../data/profile";
+import { profile, social } from "../data/profile";
 import "./Contact.css";
 
 export default function Contact() {
   return (
     <section id="contact" className="contact">
       <div className="wrap">
-        <p className="eyebrow">SM / 03 &mdash; Contact</p>
+        <p className="eyebrow">{profile.monogram} / 03 &mdash; Contact</p>
 
         <h2 className="contact__title">Got something worth building?</h2>
         <p className="contact__text">

@@ -1,6 +1,6 @@
-# santimendoza_hub
+# Dozanti
 
-Source for [santimendoza.com](https://santimendoza.com) — Santiago Mendoza's personal site. Built with React, TypeScript, and Vite.
+Source for [dozanti.com](https://dozanti.com/) — the home of Dozanti and Santiago Mendoza, Backend Engineer. Built with React, TypeScript, and Vite.
 
 ## Development
 

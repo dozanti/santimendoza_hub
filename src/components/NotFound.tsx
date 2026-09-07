@@ -1,11 +1,12 @@
 import { ArrowLeft } from "lucide-react";
 import { useEffect } from "react";
+import { profile } from "../data/profile";
 import "./NotFound.css";
 
 export default function NotFound() {
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = "404 — Santiago Mendoza";
+    document.title = `404 — ${profile.brand}`;
 
     return () => {
       document.title = previousTitle;
@@ -19,9 +20,9 @@ export default function NotFound() {
       </a>
 
       <header className="not-found__header wrap">
-        <a href="/" className="not-found__mark" aria-label="Santiago Mendoza, home">
+        <a href="/" className="not-found__mark" aria-label={`${profile.brand}, home`}>
           <img src="/mark.svg" alt="" width={28} height={28} />
-          <span>santiago mendoza</span>
+          <span translate="no">{profile.brand}</span>
         </a>
         <span className="not-found__status">HTTP / 404</span>
       </header>

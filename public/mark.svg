@@ -4,5 +4,5 @@
   <path d="M47 5H59V17" stroke="#c98a4b" stroke-width="2.5" fill="none" stroke-linecap="square"/>
   <path d="M59 47V59H47" stroke="#c98a4b" stroke-width="2.5" fill="none" stroke-linecap="square"/>
   <path d="M17 59H5V47" stroke="#c98a4b" stroke-width="2.5" fill="none" stroke-linecap="square"/>
-  <text x="32" y="40" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="21" font-weight="600" fill="#e4e7eb" text-anchor="middle">SM</text>
+  <text x="32" y="40" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="21" font-weight="600" fill="#e4e7eb" text-anchor="middle">DZ</text>
 </svg>

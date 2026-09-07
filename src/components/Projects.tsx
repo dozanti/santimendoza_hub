@@ -1,7 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { ExternalLink, Gamepad2, Github, Package, Smartphone, Monitor } from "lucide-react";
 import type { Project, ProjectCategory } from "../data/profile";
-import { projects } from "../data/profile";
+import { profile, projects } from "../data/profile";
 import "./Projects.css";
 
 const categoryIcon: Record<ProjectCategory, LucideIcon> = {
@@ -51,7 +51,7 @@ export default function Projects() {
   return (
     <section id="projects" className="projects">
       <div className="wrap">
-        <h2 className="eyebrow">SM / 02 &mdash; Projects</h2>
+        <h2 className="eyebrow">{profile.monogram} / 02 &mdash; Projects</h2>
 
         <div className="projects__grid">
           {projects.map((p) => (
