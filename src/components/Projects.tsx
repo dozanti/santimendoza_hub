@@ -1,7 +1,9 @@
 import type { LucideIcon } from "lucide-react";
-import { ExternalLink, Gamepad2, Github, Package, Smartphone, Monitor } from "lucide-react";
+import { ArrowUpRight, Gamepad2, Monitor, Package, Shapes, Smartphone } from "lucide-react";
 import type { Project, ProjectCategory } from "../data/profile";
-import { profile, projects } from "../data/profile";
+import { projects } from "../data/profile";
+import { GithubIcon } from "./BrandIcons";
+import SectionHead from "./SectionHead";
 import "./Projects.css";
 
 const categoryIcon: Record<ProjectCategory, LucideIcon> = {
@@ -9,23 +11,33 @@ const categoryIcon: Record<ProjectCategory, LucideIcon> = {
   desktop: Monitor,
   library: Package,
   game: Gamepad2,
-  misc: Package,
+  misc: Shapes,
 };
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   const Icon = categoryIcon[project.category];
+  const sheet = `02.${String(index + 1).padStart(2, "0")}`;
 
   return (
-    <article className="project">
+    <article className="project" aria-labelledby={`project-${project.id}`}>
+      <div className="corners project__corners" aria-hidden="true" />
+
       <div className="project__head">
-        <Icon size={18} strokeWidth={1.75} className="project__icon" aria-hidden="true" />
-        <span className="project__category">{project.category}</span>
+        <span className="project__category">
+          <Icon size={16} strokeWidth={1.75} aria-hidden="true" />
+          <span className="label">{project.category}</span>
+        </span>
+        <span className="project__sheet" aria-hidden="true">
+          {sheet}
+        </span>
       </div>
 
-      <h3 className="project__name">{project.name}</h3>
+      <h3 id={`project-${project.id}`} className="project__name">
+        {project.name}
+      </h3>
       <p className="project__desc">{project.description}</p>
 
-      <ul className="project__tech" aria-label="Technologies">
+      <ul className="chips chips--quiet" aria-label={`${project.name} technologies`}>
         {project.tech.map((t) => (
           <li key={t}>{t}</li>
         ))}
@@ -33,13 +45,15 @@ function ProjectCard({ project }: { project: Project }) {
 
       <div className="project__links">
         <a href={project.repo} target="_blank" rel="noopener noreferrer">
-          <Github size={14} strokeWidth={1.75} aria-hidden="true" />
+          <GithubIcon size={14} />
           Code
+          <span className="visually-hidden"> for {project.name} on GitHub</span>
         </a>
         {project.live && (
           <a href={project.live} target="_blank" rel="noopener noreferrer">
-            <ExternalLink size={14} strokeWidth={1.75} aria-hidden="true" />
+            <ArrowUpRight size={15} strokeWidth={1.75} aria-hidden="true" />
             {project.liveLabel ?? "View"}
+            <span className="visually-hidden"> for {project.name}</span>
           </a>
         )}
       </div>
@@ -49,13 +63,13 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="projects">
+    <section id="projects" className="section projects" aria-labelledby="projects-title">
       <div className="wrap">
-        <h2 className="eyebrow">{profile.monogram} / 02 &mdash; Projects</h2>
+        <SectionHead id="projects-title" sheet="02" title="Projects" />
 
         <div className="projects__grid">
-          {projects.map((p) => (
-            <ProjectCard key={p.id} project={p} />
+          {projects.map((p, i) => (
+            <ProjectCard key={p.id} project={p} index={i} />
           ))}
         </div>
       </div>

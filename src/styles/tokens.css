@@ -6,24 +6,22 @@
   --border-strong: #364150;
   --text: #e4e7eb;
   --text-muted: #8b95a1;
-  --text-dim: #4b5563;
+  --text-dim: #7d8794;
   --accent: #c98a4b;
   --accent-soft: #e0a86c;
   --accent-dim: rgba(201, 138, 75, 0.12);
   --accent-border: rgba(201, 138, 75, 0.35);
+  --on-accent: #17110a;
 
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   --maxw: 72rem;
-  --gutter: clamp(1.5rem, 5vw, 3rem);
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+  --nav-h: 64px;
+  --section-space: clamp(5rem, 11vw, 8rem);
   --radius: 3px;
+  --grid-size: 48px;
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: dark;
-  }
 }

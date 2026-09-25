@@ -33,13 +33,13 @@ export default function NotFound() {
         <div className="not-found__content wrap">
           <p className="not-found__coord">ROUTE STATUS / UNMAPPED</p>
           <p className="not-found__code" aria-hidden="true">404</p>
-          <h1>Page Not Found</h1>
+          <h1>Page not found</h1>
           <p className="not-found__message">
             This route isn&rsquo;t part of the site map.
           </p>
           <a href="/" className="btn btn--primary">
             <ArrowLeft size={15} strokeWidth={2} aria-hidden="true" />
-            Return Home
+            Return home
           </a>
         </div>
 

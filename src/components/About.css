@@ -1,41 +1,44 @@
-.about {
-  padding-block: 6rem;
-}
-
 .about__grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 4rem;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
   align-items: start;
 }
 
 .about__bio {
-  font-size: 1.2rem;
-  line-height: 1.75;
+  font-size: clamp(1.1rem, 1.9vw, 1.3rem);
+  line-height: 1.7;
   color: var(--text);
+  text-wrap: pretty;
 }
 
 .about__skills {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  border-top: 1px solid var(--border);
+  gap: 1.75rem;
+  padding-left: clamp(0rem, 3vw, 2rem);
+  border-left: 1px solid var(--border);
 }
 
-.about__skills li {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  padding: 0.7rem 0;
-  border-bottom: 1px solid var(--border);
+.about__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.about__group h3 {
+  margin: 0;
 }
 
 @media (max-width: 760px) {
   .about__grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+  }
+
+  .about__skills {
+    padding-left: 0;
+    padding-top: 2rem;
+    border-left: none;
+    border-top: 1px solid var(--border);
   }
 }

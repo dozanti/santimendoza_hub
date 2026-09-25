@@ -5,14 +5,9 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
-import "./styles/tokens.css";
-import "./styles/base.css";
+import type { Route } from "./routes";
 
-export default function App() {
-  if (window.location.pathname !== "/") {
-    return <NotFound />;
-  }
-
+function Home() {
   return (
     <>
       <a href="#main-content" className="skip-link">
@@ -28,4 +23,8 @@ export default function App() {
       <Footer />
     </>
   );
+}
+
+export default function App({ route }: { route: Route }) {
+  return route === "home" ? <Home /> : <NotFound />;
 }

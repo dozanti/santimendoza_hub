@@ -1,20 +1,33 @@
 import { profile } from "../data/profile";
+import SectionHead from "./SectionHead";
 import "./About.css";
+
+const skillGroups = [
+  { label: "Languages", items: profile.languages },
+  { label: "Focus", items: profile.focus },
+];
 
 export default function About() {
   return (
-    <section id="about" className="about">
+    <section id="about" className="section about" aria-labelledby="about-title">
       <div className="wrap">
-        <h2 className="eyebrow">{profile.monogram} / 01 &mdash; About</h2>
+        <SectionHead id="about-title" sheet="01" title="About" />
 
         <div className="about__grid">
           <p className="about__bio">{profile.bio}</p>
 
-          <ul className="about__skills" aria-label="Skills">
-            {profile.skills.map((skill) => (
-              <li key={skill}>{skill}</li>
+          <div className="about__skills">
+            {skillGroups.map((group) => (
+              <div key={group.label} className="about__group">
+                <h3 className="label">{group.label}</h3>
+                <ul className="chips" aria-label={group.label}>
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </section>

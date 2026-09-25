@@ -4,11 +4,6 @@
   grid-template-rows: auto 1fr;
 }
 
-.not-found a {
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: var(--accent-dim);
-}
-
 .not-found__header {
   width: 100%;
   min-height: 64px;
@@ -27,7 +22,6 @@
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-decoration: none;
-  text-transform: lowercase;
   transition: color 0.15s var(--ease);
 }
 
@@ -81,7 +75,7 @@
   color: transparent;
   font-family: var(--font-mono);
   font-size: clamp(5rem, 18vw, 12rem);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.08em;
   line-height: 0.75;
   -webkit-text-stroke: 1px var(--border-strong);
